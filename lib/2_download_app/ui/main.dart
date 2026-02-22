@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-import 'ui/providers/theme_color_provider.dart';
-import 'ui/screens/settings/settings_screen.dart';
-import 'ui/screens/downloads/downloads_screen.dart';
-import 'ui/theme/theme.dart';
+import 'providers/theme_color_provider.dart';
+import 'screens/settings/settings_screen.dart';
+import 'screens/downloads/downloads_screen.dart';
+import 'theme/theme.dart';
 
 void main() {
   runApp(const MyApp());
@@ -26,7 +26,8 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: appTheme,
-      home: Scaffold(
+      home: ListenableBuilder(listenable: themeColorProvider, builder: (context, child){
+      return Scaffold(
         body: _pages[_currentIndex],
 
         bottomNavigationBar: BottomNavigationBar(
@@ -45,6 +46,8 @@ class _MyAppState extends State<MyApp> {
             ),
           ],
         ),
+        ),
+      }
       ),
     );
   }
