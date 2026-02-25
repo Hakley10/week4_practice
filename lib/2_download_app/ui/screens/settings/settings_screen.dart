@@ -13,7 +13,7 @@ class SettingsScreen extends StatelessWidget {
       listenable: themeColorProvider,
       builder: (context, child) {
         return Container(
-          color: currentThemeColor.backgroundColor,
+          color: themeColorProvider.backgroundColor,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
@@ -21,7 +21,7 @@ class SettingsScreen extends StatelessWidget {
               Text(
                 "Settings",
                 style: AppTextStyles.heading.copyWith(
-                  color: currentThemeColor.color,
+                  color: themeColorProvider.currentThemeColor.color,
                 ),
               ),
 
@@ -40,7 +40,7 @@ class SettingsScreen extends StatelessWidget {
                     .map(
                       (theme) => ThemeColorButton(
                         themeColor: theme,
-                        isSelected: theme == currentThemeColor,
+                        isSelected: theme == themeColorProvider.currentThemeColor,
                         onTap: (value) {
                           themeColorProvider.changeTheme(value);
                         },

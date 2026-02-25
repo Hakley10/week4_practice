@@ -19,7 +19,7 @@ class DownloadTile extends StatelessWidget {
     }
   }
 
-  IconData get Icon{
+  IconData get icon{
         switch(controller.status){
       case DownloadStatus.notDownloaded:
         return Icons.download;
