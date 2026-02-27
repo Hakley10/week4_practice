@@ -36,7 +36,7 @@ class _MyAppState extends State<MyApp> {
               _currentIndex = index;
             });
           },
-          selectedItemColor: currentThemeColor.color,
+          selectedItemColor: themeColorProvider.currentThemeColor.color,
           items: [
             BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Downloads'),
             BottomNavigationBarItem(
